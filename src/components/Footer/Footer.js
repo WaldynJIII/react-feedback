@@ -11,6 +11,18 @@ render ( ){
         comments: this.props.reduxStore.feedBack.comments,
         funk: this.props.reduxStore.feedBack.funk
     }
+    
+        getFeed = () => {
+            // send GET request to update the like value for an item clicked
+            axios({
+                method: 'GET',
+                url: `/api/feedback`,
+            }).then((response) => {
+                // put the data in the local state array galleryItems
+                this.setState({
+                    pizzaArray: response.data,
+                })
+    }
     yeetFeed=(event)=>{
         const action = {type: 'YEET_AND_REPLACE', payload: 'REFRESH'}
         this.props.dispatch(action)
@@ -26,7 +38,7 @@ render ( ){
         // const action = { type: 'ADD_ITEM', payload: selection };
         // this.props.dispatch(action);
     }
-    }
+ }}
 }
     if(displayFeels.funk === 'onReady'){
 return (
