@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
+
 import './App.css';
 import FeelingForm from '../Feeling/FeelingForm.js'
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 import Understanding from '../Understansding/Understanding.js';
 import SUpport from '../Support/SUpport';
