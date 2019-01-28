@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import { connect } from 'react-redux';
 
 class Footer extends Component {
@@ -16,10 +16,10 @@ render ( ){
         this.props.dispatch(action)
         axios({
             method: 'POST',
-            url: '/results',
-            data: selection
+            url: '/api/feedback',
+            data: displayFeels
         }).then((response) => {
-            this.props.history.push('/results');
+            this.props.history.push('/api/feedback');
         }).catch((error) => {
             alert('Something went wrong posting your result.')
         });
@@ -27,7 +27,7 @@ render ( ){
         // this.props.dispatch(action);
     }
     }
-
+}
     if(displayFeels.funk === 'onReady'){
 return (
     
@@ -37,7 +37,7 @@ return (
             <li> {displayFeels.understanding + '' + 'Understanding'}</li>
             <li> {displayFeels.support + '' + 'Support'}</li>
             <li> {displayFeels.comments + '' + 'Feels'}</li>
-            <button onCLick='yeetFeed' className='finalButton'>Submit</button>
+            <button onCLick={yeetFeed} className='finalButton'>Submit</button>
     </ul>
     </footer>
 )}
@@ -53,7 +53,7 @@ return (
                 
             </ul>
         </footer>
-    )}}}
+    )}
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore
 })

@@ -3,6 +3,12 @@ import axios from 'axios';
 import './App.css';
 import FeelingForm from './Feeling/FeelingForm.js'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+import Understanding from '../Understansding/Understanding.js';
+import SUpport from '../Support/SUpport';
+import Comments from '../Comments/Comments';
+// import PageTwo from '../PageTwo/PageTwo';
+
 class App extends Component {
   render() {
     return (
@@ -20,9 +26,9 @@ class App extends Component {
           <Link to="/">Home</Link>
             {/* When we go to / load the ColorPage */}
             <Route exact path="/" component={FeelingForm} />
-            <Route exact path="/item" component={ItemInputPage} />
-            <Route exact path="/confirm" component={ConfirmPage} />
-            <Route exact path="/results" component={ResultPage} />
+            <Route exact path="/understand" component={Understanding} />
+            <Route exact path="/support" component={SUpport} />
+            <Route exact path="/comment" component={Comments} />
           </div>
         </Router>
       </div>
