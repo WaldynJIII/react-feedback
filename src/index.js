@@ -37,11 +37,10 @@ funk: ''}
         return state
     }
     else if (action.type === 'YEET_AND_REPLACE') {
-    this.setState({
-        state = []
-    })
-    return state
-}}
+    
+    return []
+}
+return state}
 const storeInstance = createStore(
     combineReducers({
         feedBack,
